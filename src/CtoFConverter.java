@@ -5,17 +5,20 @@ public class CtoFConverter {
         Scanner scan= new Scanner(System.in);
         // variable
         double celsiusInput;
-        double fahrenheit = 0;
+        double fahrenheit;
         boolean checks = false;
 
         //checks for validation and loops until valid
         do {
+            //asks the user
             System.out.println("Enter the degrees in celsius to be converted to degrees fahrenheit:");
             if (scan.hasNextDouble()) {
                 celsiusInput = scan.nextDouble();
                 checks = true;
-                fahrenheit = (9/5) * (celsiusInput) + 32;
-                System.out.printf("%-9s %6.01f", "Celsius: ", fahrenheit);
+                //calculates here
+                fahrenheit = (celsiusInput * 9/5) + 32;
+                System.out.printf("%-12s %6.2f", "Celsius: ", celsiusInput);
+                System.out.printf("\n%-12s %6.2f", "Fahrenheit:", fahrenheit);
             } else {
                 System.out.println("Looks like you have entered the wrong data type, please try again.");
             }
